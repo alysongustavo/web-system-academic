@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit colors="true">
+    <testsuites>
+        <testsuite name="Application Test Suite">
+            <directory>./module/Application/test</directory>
+        </testsuite>
+        <testsuite name="Diretoria Test Suite">
+            <directory>./module/Diretoria/test</directory>
+        </testsuite>
+        <testsuite name="Estudante Test Suite">
+            <directory>./module/Estudante/test</directory>
+        </testsuite>
+        <testsuite name="Professor Test Suite">
+            <directory>./module/Professor/test</directory>
+        </testsuite>
+        <testsuite name="Secretaria Test Suite">
+            <directory>./module/Secretaria/test</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
