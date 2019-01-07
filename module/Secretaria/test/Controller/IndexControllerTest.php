@@ -7,7 +7,7 @@
 
 namespace SecretariaTest\Controller;
 
-use Application\Controller\IndexController;
+use Secretaria\Controller\IndexController;
 use Zend\Stdlib\ArrayUtils;
 use Zend\Test\PHPUnit\Controller\AbstractHttpControllerTestCase;
 
@@ -27,6 +27,17 @@ class IndexControllerTest extends AbstractHttpControllerTestCase
         ));
 
         parent::setUp();
+    }
+
+    public function moduleSecretariaPodeSerAcessado(){
+
+        $this->dispatch('/secretaria');
+
+        $this->assertModuleName('secretaria');
+        $this->assertControllerName(IndexController::class); // as specified in router's controller name alias
+        $this->assertControllerClass('IndexController');
+        $this->assertMatchedRouteName('secretaria-dashboard');
+
     }
 
 }

@@ -15,18 +15,33 @@ use Zend\View\Model\ViewModel;
 class UserController extends AbstractActionController
 {
 
-    public function indexAction()
-    {
+    public function indexAction(){
+
         return new ViewModel();
     }
 
-    public function addAction()
-    {
+    public function findAction(){
+
         return new ViewModel();
     }
 
-    public function editAction()
-    {
+    public function toViewAction(){
+
+        return new ViewModel();
+    }
+
+    public function addAction(){
+
+        return new ViewModel();
+    }
+
+    public function editAction(){
+
+        return new ViewModel();
+    }
+
+    public function deleteAction(){
+
         return new ViewModel();
     }
 

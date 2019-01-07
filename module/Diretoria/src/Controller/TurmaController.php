@@ -43,4 +43,24 @@ class TurmaController extends AbstractActionController
 
         return new ViewModel();
     }
+
+    public function initAction(){
+
+        return new ViewModel();
+    }
+
+    public function closeAction(){
+
+        return new ViewModel();
+    }
+
+    public function enrollAction(){
+
+        return new ViewModel();
+    }
+
+    public function addNoteAction(){
+
+        return new ViewModel();
+    }
 }

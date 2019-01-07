@@ -7,7 +7,7 @@
 
 namespace ProfessorTest\Controller;
 
-use Application\Controller\IndexController;
+use Professor\Controller\IndexController;
 use Zend\Stdlib\ArrayUtils;
 use Zend\Test\PHPUnit\Controller\AbstractHttpControllerTestCase;
 
@@ -27,6 +27,15 @@ class IndexControllerTest extends AbstractHttpControllerTestCase
         ));
 
         parent::setUp();
+    }
+
+    public function moduleProfessorPodeSerAcessado(){
+        $this->dispatch('/professor');
+
+        $this->assertModuleName('professor');
+        $this->assertControllerName(IndexController::class); // as specified in router's controller name alias
+        $this->assertControllerClass('IndexController');
+        $this->assertMatchedRouteName('professor-dashboard');
     }
 
 }
