@@ -25,7 +25,132 @@ return [
                 ],
                 'may_terminate' => true,
                 'child_routes' => [
-
+                    'secretaria-user' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/user[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\UserController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
+                    'secretaria-local' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/local[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\LocalController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
+                    'secretaria-module' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/module[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\ModuleController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
+                    'secretaria-schedule' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/schedule[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\ScheduleController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
+                    'secretaria-subject' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/subject[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\SubjectController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
+                    'secretaria-academicdegree' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/academicdegree[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\AcademicDegreeController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
+                    'secretaria-course' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/course[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\CourseController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
+                    'secretaria-academicperiod' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/academicperiod[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\AcademicPeriodController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
+                    'secretaria-turma' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/turma[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\TurmaController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
                 ]
             ],
         ],
@@ -33,7 +158,16 @@ return [
     'controllers' => [
         'factories' => [
             Controller\IndexController::class => InvokableFactory::class,
-        ],
+            Controller\UserController::class => InvokableFactory::class,
+            Controller\LocalController::class => InvokableFactory::class,
+            Controller\ModuleController::class => InvokableFactory::class,
+            Controller\ScheduleController::class => InvokableFactory::class,
+            Controller\SubjectController::class => InvokableFactory::class,
+            Controller\AcademicDegreeController::class => InvokableFactory::class,
+            Controller\CourseController::class => InvokableFactory::class,
+            Controller\AcademicPeriodController::class => InvokableFactory::class,
+            Controller\TurmaController::class => InvokableFactory::class,
+        ]
     ],
     'view_manager' => [
         'display_not_found_reason' => true,

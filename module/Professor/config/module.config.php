@@ -25,7 +25,62 @@ return [
                 ],
                 'may_terminate' => true,
                 'child_routes' => [
-
+                    'professor-user' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/user[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\UserController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
+                    'professor-notification' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/notification[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\NotificationController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
+                    'professor-attachment' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/attachment[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\AttachmentController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
+                    'professor-turma' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/turma[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\TurmaController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
                 ]
             ],
         ],
@@ -33,6 +88,10 @@ return [
     'controllers' => [
         'factories' => [
             Controller\IndexController::class => InvokableFactory::class,
+            Controller\UserController::class => InvokableFactory::class,
+            Controller\NotificationController::class => InvokableFactory::class,
+            Controller\AttachmentController::class => InvokableFactory::class,
+            Controller\TurmaController::class => InvokableFactory::class,
         ],
     ],
     'view_manager' => [

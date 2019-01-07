@@ -39,7 +39,147 @@ return [
                                 'action' => 'index'
                             ]
                         ]
-                    ]
+                    ],
+                    'diretoria-local' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/local[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\LocalController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
+                    'diretoria-module' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/module[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\ModuleController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
+                    'diretoria-schedule' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/schedule[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\ScheduleController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
+                    'diretoria-subject' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/subject[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\SubjectController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
+                    'diretoria-academicdegree' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/academicdegree[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\AcademicDegreeController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
+                    'diretoria-course' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/course[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\CourseController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
+                    'diretoria-academicperiod' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/academicperiod[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\AcademicPeriodController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
+                    'diretoria-notification' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/notification[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\NotificationController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
+                    'diretoria-attachment' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/attachment[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\AttachmentController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
+                    'diretoria-turma' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/turma[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\TurmaController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
                 ]
             ],
         ],
@@ -47,7 +187,17 @@ return [
     'controllers' => [
         'factories' => [
             Controller\IndexController::class => InvokableFactory::class,
-            Controller\UserController::class => InvokableFactory::class
+            Controller\UserController::class => InvokableFactory::class,
+            Controller\LocalController::class => InvokableFactory::class,
+            Controller\ModuleController::class => InvokableFactory::class,
+            Controller\ScheduleController::class => InvokableFactory::class,
+            Controller\SubjectController::class => InvokableFactory::class,
+            Controller\AcademicDegreeController::class => InvokableFactory::class,
+            Controller\CourseController::class => InvokableFactory::class,
+            Controller\AcademicPeriodController::class => InvokableFactory::class,
+            Controller\NotificationController::class => InvokableFactory::class,
+            Controller\AttachmentController::class => InvokableFactory::class,
+            Controller\TurmaController::class => InvokableFactory::class,
         ],
     ],
     'view_manager' => [

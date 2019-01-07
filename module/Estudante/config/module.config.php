@@ -25,7 +25,118 @@ return [
                 ],
                 'may_terminate' => true,
                 'child_routes' => [
-
+                    'estudante-user' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/user[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\UserController::class,
+                                'action' => 'toview'
+                            ]
+                        ]
+                    ],
+                    'estudante-subject' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/subject[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\SubjectController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
+                    'estudante-academicdegree' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/academicdegree[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\AcademicDegreeController::class,
+                                'action' => 'toview'
+                            ]
+                        ]
+                    ],
+                    'estudante-course' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/course[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\CourseController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
+                    'estudante-academicperiod' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/academicperiod[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\AcademicPeriodController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
+                    'estudante-notification' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/notification[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\NotificationController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
+                    'estudante-attachment' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/attachment[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\AttachmentController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
+                    'estudante-turma' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/turma[/:action[/:id]]',
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]+'
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\TurmaController::class,
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
                 ]
             ],
         ],
@@ -33,6 +144,14 @@ return [
     'controllers' => [
         'factories' => [
             Controller\IndexController::class => InvokableFactory::class,
+            Controller\UserController::class => InvokableFactory::class,
+            Controller\SubjectController::class => InvokableFactory::class,
+            Controller\AcademicDegreeController::class => InvokableFactory::class,
+            Controller\CourseController::class => InvokableFactory::class,
+            Controller\AcademicPeriodController::class => InvokableFactory::class,
+            Controller\NotificationController::class => InvokableFactory::class,
+            Controller\AttachmentController::class => InvokableFactory::class,
+            Controller\TurmaController::class => InvokableFactory::class,
         ],
     ],
     'view_manager' => [
